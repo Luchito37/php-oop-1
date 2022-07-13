@@ -33,12 +33,12 @@ class Movie
      */ 
     public function getFullMovie()
     {
-        return $this->titolo. "<h2>Diretta da:</h2>" .$this->regista. "<h2>Tipologia:</h2>" .$this->genere;
+        return "<h2>Titolo :</h2> ". $this->titolo. "<h2>Diretta da:</h2>" .$this->regista. "<h2>Tipologia:</h2>" .$this->genere;
     }
 
     public function getFullCaratteristic()
     {
-        return "Boc Office : ". $this->boxOffice . "<h2>Data d'uscita:</h2>" .$this->dataUscita. " <h2>Durata :</h2>" .$this->durata;
+        return "<h2>Box Office :</h2> ". $this->boxOffice . "<h2>Data d'uscita:</h2>" .$this->dataUscita. " <h2>Durata :</h2>" .$this->durata;
     }
 
 
@@ -49,7 +49,7 @@ class Movie
         $caratteristiche= $this->getFullCaratteristic();
 
         ?>
-            <h2>FILM  : <h3><?php echo $film   ?></h3> </h2>
+            <h1>FILM  : <h4><?php echo $film   ?></h4> </h1>
             <h2>CARATTERISTICHE : <h4><?php echo $caratteristiche  ?></h4></h2>
             <hr>
         <?php
