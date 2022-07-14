@@ -8,7 +8,7 @@
         - vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori delle relative proprietà
 */
 
-class Movie 
+class Movie
 {
     public $titolo;
     public $regista;
@@ -30,15 +30,15 @@ class Movie
 
     /**
      * Get the value of titolo
-     */ 
+     */
     public function getFullMovie()
     {
-        return "<h2>Titolo :</h2> ". $this->titolo. "<h2>Diretta da:</h2>" .$this->regista. "<h2>Tipologia:</h2>" .$this->genere;
+        return "<h2>Titolo :</h2> " . $this->titolo . "<h2>Diretta da:</h2>" . $this->regista . "<h2>Tipologia:</h2>" . $this->genere;
     }
 
     public function getFullCaratteristic()
     {
-        return "<h2>Box Office :</h2> ". $this->boxOffice . "<h2>Data d'uscita:</h2>" .$this->dataUscita. " <h2>Durata :</h2>" .$this->durata;
+        return "<h2>Box Office :</h2> " . $this->boxOffice . "<h2>Data d'uscita:</h2>" . $this->dataUscita . " <h2>Durata :</h2>" . $this->durata;
     }
 
 
@@ -46,13 +46,29 @@ class Movie
     public function printCard()
     {
         $film = $this->getFullMovie();
-        $caratteristiche= $this->getFullCaratteristic();
+        $caratteristiche = $this->getFullCaratteristic();
 
-        ?>
-            <h1>FILM  : <h4><?php echo $film   ?></h4> </h1>
-            <h2>CARATTERISTICHE : <h4><?php echo $caratteristiche  ?></h4></h2>
-            <hr>
-        <?php
+?>
+
+        <div class="container mt-5">
+            <div class="row ">
+                <div class="col mb-5 text-center d-flex justify-content-around">
+                    <div class="card bg-danger" style="width: 30rem;">
+                        <div class="card-header">
+                            <h1>FILM : <h4><?php echo $film   ?></h4>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h2>CARATTERISTICHE : <h4><?php echo $caratteristiche  ?></h4>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+<?php
 
 
     }
